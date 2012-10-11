@@ -7,7 +7,7 @@ class JqueryValidationHelper extends AppHelper {
   public $helpers = array('Form');
 
   #-- Map to replace constants with jquery and class info
-  #-- Pass as $options['jquery-validate']
+  #-- Pass as $options['jquery-validation']
   public $options = array(
       'map' => array(
           '__formSelector__' => '.jquery-validation',
@@ -52,11 +52,11 @@ class JqueryValidationHelper extends AppHelper {
   public function input($fieldName, $options = array()) {
 
     $map = $this->options['map'];
-    if (isset($options['jquery-validate'])) {
-      if (isset($options['jquery-validate']['map'])) {
-        $map = array_merge($map, $options['jquery-validate']['map']);
+    if (isset($options['jquery-validation'])) {
+      if (isset($options['jquery-validation']['map'])) {
+        $map = array_merge($map, $options['jquery-validation']['map']);
       }
-      unset($options['jquery-validate']);
+      unset($options['jquery-validation']);
     }
     $model = $this->Form->defaultModel;
     $meta = $this->meta($model, $fieldName);
