@@ -14,9 +14,19 @@ Then add the helper in your controller
 
 public $helpers = array( 'Html','Form', 'Js' => array('Jquery'), 'JqueryValidation' );
 
-When you create a dialog you need to provide a special class that is used in the javascript to detect which forms to validate:
+When you create a form you need to provide a special class that is used in the javascript to detect which forms to validate:
 
 echo $this->Form->create('Order', array('class' => 'jquery-validation'));
+
+Or better yet, use the two methods to create Bootstrap formatted forms
+
+echo $this->JqueryValidation->createVertical('MyModel');
+
+or
+
+echo $this->JqueryValidation->createHorizontal('MyModel');
+
+and then the error messages should display either below or to the right of the input fields.  Remember to download Twitter Bootstrap (css and js) separately and add it to your layou!
 
 Then for each element that you want to validate, use the helper function for the input:
 
