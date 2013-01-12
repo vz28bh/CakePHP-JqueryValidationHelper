@@ -87,6 +87,9 @@ class JqueryValidationHelper extends AppHelper {
    * @param type $options
    */
   public function input($fieldName, $options = array()) {
+	if (!isset($options['error']['attributes']['class'])) {
+	  $options['error']['attributes']['class'] = $this->map['error-class'];
+	}
 	$map = $this->options['map'];
 	if (isset($options['jquery-validation'])) {
 	  if (isset($options['jquery-validation']['map'])) {
