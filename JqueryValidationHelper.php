@@ -26,14 +26,14 @@ class JqueryValidationHelper extends AppHelper {
           'errorClass': '__errorClass__',
           'highlight': function(element,errorClass) {
 		    $(element)
-            .siblings(':not(label)').remove();
+            .siblings('__errorClass__').remove();
             $(element)
             .addClass('__hilightClass__')
             .closest('__closestSelector__').addClass('__closestErrorClass__');
          },
           'unhighlight': function(element,errorClass) {
 			$(element)
-            .siblings(':not(label)').remove();
+            .siblings('__errorClass__').remove();
             $(element)
             .removeClass('__hilightClass__')
             .closest('__closestSelector__').removeClass('__closestErrorClass__')
